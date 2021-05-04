@@ -14,6 +14,8 @@ ul.social-network li{
     padding: 10px;
 }
 
+
+
 .fa-facebook-f:hover{
     color: blue;
 }
@@ -26,3 +28,8 @@ ul.social-network li{
     color: blue;
 }
 
+/*
+#facebook{
+    color: 3b5999;
+}
+*/
