@@ -29,6 +29,7 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
+    private auth: AuthService,
     private authService: AuthService
   ) { }
 
@@ -40,6 +41,7 @@ export class InicioComponent implements OnInit {
     }
     this.getAllTemas()
     this.getAllPostagens()
+    this.getByIdUser()
   }
 
   getAllTemas(){
@@ -47,6 +49,14 @@ export class InicioComponent implements OnInit {
       this.listaTemas = resp
     })
   }
+
+  getByIdUser(){
+    this.auth.getByIdUser(this.idUser).subscribe((resp: User) =>{
+      this.user = resp
+
+    })
+  }
+
 
   findByIdTema(){
     this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=>{
